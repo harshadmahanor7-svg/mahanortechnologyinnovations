@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MAHANOR - Technology Innovations</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-header{background:#0a1f2e;color:#fff;padding:14px 5%;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:22px;font-weight:900;line-height:1}.logo span{color:#f5c542;font-size:28px}.logo small{font-size:10px;letter-spacing:2px;color:#ccc}
-nav a{color:#fff;text-decoration:none;margin:0 12px;font-size:14px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+header{background:#0a1f2e;color:#fff;padding:14px 5%;display:flex;justify-content:space-between}
+.logo{font-weight:900;font-size:22px}.logo span{color:#f5c542;font-size:28px}
 .btn{background:#f5c542;color:#000;padding:10px 18px;border:none;border-radius:4px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
-.hero{background:linear-gradient(90deg,rgba(10,31,46,.95),rgba
+.hero{background:#0a1f2e;color:#fff;padding:60px 8%}
+.hero h1{font-size:42px}.hero h1 span{color:#f5c542}
+.section{padding:40px 8%}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{border:1px solid #eee;padding:16px;border-radius:8px}
+input,textarea{width:100%;padding:10px;margin:6px 0;border:1px solid #ccc;border-radius:6px}
+#formBox{display:none;background:#fff;padding:20px;border-radius:10px;margin-top:12px;max-width:500px;border:1px solid #ddd}
+footer{background:#0a1f2e;color:#fff;padding:30px 8%}
+</style>
+</head>
+<body>
+<header><div class="logo"><span>M</span> MAHANOR<br><small>TECHNOLOGY INNOVATIONS</small></div><a class="btn" href="#shop">Shop</a></header>
+<div class="hero"><h1>MAHANOR<br><span>TECHNOLOGY INNOVATIONS</span></h1><br><a class="btn" href="#services">Our Services</a></div>
+<div class="section" id="services"><h2>What We Do</h2><br><div class="grid"><div class="card"><b>Website Development</b></div><div class="card"><b>App Development</b></div><div class="card"><b>E-Commerce</b></div><div class="card"><b>Digital Marketing</b></div><div class="card"><b>IT Support</b></div><div class="card"><b>Branding</b></div></div></div>
