@@ -5,73 +5,173 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mahanor Technology Innovations</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:linear-gradient(180deg,#1e40af 0%,#2563eb 30%,#f97316 100%);display:flex;justify-content:center;min-height:100vh}
-.box{width:100%;max-width:420px;background:#f8fafc;min-height:100vh;padding:0 14px 20px;overflow:hidden}
-.top{background:white;margin:0 -14px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.08);position:sticky;top:0;z-index:10}
-.logo{font-weight:900;font-size:15px;line-height:1.2}.logo span{color:#f97316;font-size:11px}
-.lang{display:flex;gap:4px}.lang button{padding:6px 9px;border:1px solid #ddd;border-radius:20px;background:#f1f5f9;font-size:11px;cursor:pointer;font-weight:bold}.lang button.active{background:#111;color:white}
-.center{text-align:center;margin-top:20px;background:white;padding:25px 15px 20px;border-radius:20px;box-shadow:0 5px 20px rgba(0,0,0,.06)}
-.mti-logo{width:230px;margin:0 auto}.mti-logo img{width:100%}
-h1{font-size:23px;margin-top:10px} h1 span{color:#2563eb}
-p{color:#666;font-size:14px;margin:5px 0 5px}
-.form-card{background:white;padding:20px;border-radius:20px;margin-top:15px;box-shadow:0 5px 20px rgba(0,0,0,.06)}
-label{font-size:13px;font-weight:bold;display:block;margin:15px 0 5px;text-align:left}
-input{width:100%;padding:14px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;outline:none;background:#f8fafc} input:focus{border-color:#2563eb;background:white}
-.btn{width:100%;padding:15px;background:linear-gradient(90deg,#2563eb,#f97316);color:white;border:none;border-radius:12px;font-size:16px;font-weight:bold;margin-top:25px;cursor:pointer;box-shadow:0 5px 15px rgba(37,99,235,.3)}
-.link{text-align:center;margin-top:20px;font-size:14px}.link a{color:#2563eb;text-decoration:none;font-weight:bold}
-.footer{text-align:center;margin-top:20px;font-size:12px;color:#888}
-#dash{display:none}
-.welcome{background:linear-gradient(135deg,#2563eb,#f97316);color:white;padding:22px;border-radius:20px;margin-top:20px;box-shadow:0 8px 20px rgba(37,99,235,.3)}
-.welcome h2{font-size:21px}.welcome p{color:white;margin:8px 0 0;opacity:.95;font-size:14px;line-height:1.5}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
-.card{padding:22px 18px;border-radius:18px;text-align:center;color:white;font-weight:bold}
-.c1{background:linear-gradient(135deg,#2563eb,#60a5fa)} .c2{background:linear-gradient(135deg,#f97316,#fbbf24)} .c3{background:linear-gradient(135deg,#16a34a,#4ade80)} .c4{background:linear-gradient(135deg,#7c3aed,#c084fc)}
-.card b{font-size:30px;display:block}.card span{font-size:13px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{background:#1e40af;display:flex;justify-content:center;min-height:100vh}
+.box{width:100%;max-width:430px;background:#f1f5f9;min-height:100vh;padding:0 14px 25px}
+.top{background:#fff;margin:0 -14px;padding:13px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.logo{font-weight:900;font-size:16px;line-height:1.1;color:#111}
+.logo span{color:#f97316;font-size:11px;letter-spacing:.5px}
+.lang{display:flex;gap:4px}
+.lang button{padding:6px 10px;border:1px solid #e2e8f0;border-radius:20px;background:#f8fafc;font-size:11px;font-weight:700;cursor:pointer}
+.lang button.active{background:#111;color:#fff}
+.center{text-align:center;margin-top:18px;background:#fff;padding:28px 15px 20px;border-radius:22px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.mti-logo{width:220px;margin:0 auto}
+.mti-logo img{width:100%;height:auto}
+.center h1{font-size:23px;margin-top:12px;color:#111}
+.center h1 span{color:#2563eb}
+.center p{color:#64748b;font-size:14px;margin-top:6px}
+.form-card{background:#fff;padding:22px;border-radius:22px;margin-top:14px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.form-card label{font-size:13px;font-weight:800;display:block;margin:14px 0 6px;text-align:left;color:#111}
+.form-card input{width:100%;padding:14px 14px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;outline:none;background:#f8fafc}
+.form-card input:focus{border-color:#2563eb;background:#fff}
+.btn{width:100%;padding:15px;background:linear-gradient(90deg,#2563eb,#f97316);color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:800;margin-top:24px;cursor:pointer}
+.btn-dark{width:100%;padding:13px;background:#111;color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;margin-top:12px;cursor:pointer}
+.btn-green{width:100%;padding:15px;background:#16a34a;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:800;margin-top:14px;cursor:pointer;display:block;text-align:center;text-decoration:none}
+.link{text-align:center;margin-top:18px;font-size:14px;color:#475569}
+.link a{color:#2563eb;text-decoration:none;font-weight:800}
+.note{text-align:center;font-size:12px;margin-top:12px;color:#94a3b8}
+.footer{text-align:center;margin-top:20px;font-size:12px;color:#94a3b8}
+#dash,#p-service,#p-shop,#p-orders,#p-contact{display:none}
+.welcome{background:linear-gradient(135deg,#2563eb,#f97316);color:#fff;padding:22px;border-radius:22px;margin-top:18px;box-shadow:0 10px 25px rgba(37,99,235,.25)}
+.welcome h2{font-size:22px}
+.welcome p{color:#fff;margin:8px 0 0;font-size:14px;line-height:1.6;opacity:.95}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.card{padding:24px 10px;border-radius:20px;text-align:center;color:#fff;font-weight:800;cursor:pointer;border:none;width:100%;box-shadow:0 6px 15px rgba(0,0,0,.1)}
+.c1{background:linear-gradient(135deg,#2563eb,#60a5fa)}
+.c2{background:linear-gradient(135deg,#f97316,#fbbf24)}
+.c3{background:linear-gradient(135deg,#16a34a,#4ade80)}
+.c4{background:linear-gradient(135deg,#7c3aed,#c084fc)}
+.card b{font-size:34px;display:block}
+.card span{font-size:13px}
+.page{background:#fff;padding:20px;border-radius:22px;margin-top:18px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.page h2{font-size:20px;margin:10px 0 15px}
+.back{background:#f1f5f9;border:none;padding:9px 15px;border-radius:20px;font-weight:800;cursor:pointer;font-size:13px}
+.item{display:flex;justify-content:space-between;align-items:center;background:#fff7ed;padding:14px;border-radius:14px;margin-bottom:10px;border-left:4px solid #f97316}
+.item b{font-size:14px;color:#111}
+.item span{font-size:12px;color:#64748b}
+.price{color:#2563eb;font-weight:900;font-size:16px;white-space:nowrap;margin-left:10px}
+.contact-box{background:#f8fafc;padding:16px;border-radius:14px;line-height:1.8;font-size:14px}
 </style>
 </head>
 <body>
 <div class="box">
 <div class="top">
-<div class="logo">MAHANOR<br><span>Technology Innovations</span></div>
-<div class="lang"><button class="active" onclick="setLang(this,'मराठी')">मराठी</button><button onclick="setLang(this,'हिंदी')">हिंदी</button><button onclick="setLang(this,'English')">English</button></div>
+<div class="logo">MAHANOR<br><span>TECHNOLOGY INNOVATIONS</span></div>
+<div class="lang">
+<button class="active" onclick="setLang(this,'mr')">मराठी</button>
+<button onclick="setLang(this,'hi')">हिंदी</button>
+<button onclick="setLang(this,'en')">English</button>
+</div>
 </div>
 
+<!-- LOGIN -->
 <div id="login">
 <div class="center">
-<div class="mti-logo"><img src="logo.png"></div>
+<div class="mti-logo"><img src="logo.png" alt="MTI Logo"></div>
 <h1>Mahanor <span>Technology</span> Innovations</h1>
 <p id="subtitle">मध्ये लॉगिन करा</p>
 </div>
 <div class="form-card">
-<label id="l1">ईमेल</label><input type="email" placeholder="तुमचा ईमेल टाका">
-<label id="l2">पासवर्ड</label><input type="password" placeholder="••••••••">
+<label id="l1">मोबाईल नंबर</label>
+<input type="tel" placeholder="98765 43210">
+<label id="l2">पासवर्ड</label>
+<input type="password" placeholder="••••••••">
 <button class="btn" id="loginBtn" onclick="showDash()">लॉगिन करा →</button>
 <div class="link"><span id="noacc">खाते नाही?</span> <a href="#" id="reg">नोंदणी करा</a></div>
+<p class="note">ग्राहकांसाठी - कोणताही नंबर टाकून लॉगिन होईल</p>
 </div>
 </div>
 
+<!-- DASHBOARD -->
 <div id="dash">
-<div class="welcome"><h2>welcome</h2><p id="welcomeText">Mahanor Technology Innovations मध्ये आपले स्वागत आहे</p></div>
-<div class="grid">
-<div class="card c1"><b>🔧</b><span>Services</span></div>
-<div class="card c2"><b>🛒</b><span>Shop</span></div>
-<div class="card c3"><b>📦</b><span>My Orders</span></div>
-<div class="card c4"><b>📞</b><span>Contact</span></div>
+<div class="welcome">
+<h2 id="welcomeTitle">नमस्कार! 👋</h2>
+<p id="welcomeText">Mahanor Technology Innovations मध्ये आपले स्वागत आहे</p>
 </div>
-<button class="btn" style="background:#111" onclick="location.reload()">Logout</button>
+<div class="grid">
+<button class="card c1" onclick="openPage('p-service')"><b>🔧</b><span>Services</span></button>
+<button class="card c2" onclick="openPage('p-shop')"><b>🛒</b><span>Shop</span></button>
+<button class="card c3" onclick="openPage('p-orders')"><b>📦</b><span>My Orders</span></button>
+<button class="card c4" onclick="openPage('p-contact')"><b>📞</b><span>Contact</span></button>
+</div>
+<button class="btn-dark" onclick="location.reload()">Logout</button>
 </div>
 
-<div class="footer">© 2026 Mahanor Technology Innovations - Nashik</div>
+<!-- SERVICES PAGE -->
+<div id="p-service" class="page">
+<button class="back" onclick="goHome()">← Back</button>
+<h2>🔧 आमच्या सेवा</h2>
+<div class="item"><div><b>Mobile Repair</b><br><span>Screen, Battery, Charging</span></div><div class="price">₹499+</div></div>
+<div class="item"><div><b>Laptop Repair</b><br><span>Software, Hardware</span></div><div class="price">₹999+</div></div>
+<div class="item"><div><b>CCTV Installation</b><br><span>Home / Shop</span></div><div class="price">₹4,999+</div></div>
+<div class="item"><div><b>Printer / Accessories</b><br><span>Sale & Service</span></div><div class="price">₹299+</div></div>
+<a class="btn-green" href="https://wa.me/919876543210?text=Hi Mahanor, Mala Service Pahije">WhatsApp वर बुक करा</a>
 </div>
+
+<!-- SHOP PAGE -->
+<div id="p-shop" class="page">
+<button class="back" onclick="goHome()">← Back</button>
+<h2>🛒 Shop</h2>
+<div class="item"><div><b>Mobile Cover</b><br><span>All Models Available</span></div><div class="price">₹199</div></div>
+<div class="item"><div><b>Tempered Glass</b><br><span>With Fitting</span></div><div class="price">₹149</div></div>
+<div class="item"><div><b>Charger / Cable</b><br><span>Original Quality</span></div><div class="price">₹499</div></div>
+<div class="item"><div><b>Earphone / Earbuds</b><br><span>Best Sound</span></div><div class="price">₹699</div></div>
+<a class="btn-green" href="https://wa.me/919876543210?text=Hi Mahanor, Mala Product Pahije">WhatsApp वर ऑर्डर करा</a>
+</div>
+
+<!-- ORDERS PAGE -->
+<div id="p-orders" class="page">
+<button class="back" onclick="goHome()">← Back</button>
+<h2>📦 My Orders</h2>
+<p style="text-align:center;padding:25px 0;color:#64748b;line-height:1.6">अजून कोणतीही ऑर्डर नाही.<br>Shop मधून ऑर्डर करा!</p>
+<button class="btn" onclick="openPage('p-shop')">Shop बघा →</button>
+</div>
+
+<!-- CONTACT PAGE -->
+<div id="p-contact" class="page">
+<button class="back" onclick="goHome()">← Back</button>
+<h2>📞 संपर्क</h2>
+<div class="contact-box">
+<b>Mahanor Technology Innovations</b><br>
+Arvi, Maharashtra<br><br>
+📞 98765 43210<br>
+⏰ सकाळी 10 ते रात्री 9<br>
+📍 Arvi Main Road
+</div>
+<a class="btn-green" href="https://wa.me/919876543210?text=Hi Mahanor">WhatsApp करा</a>
+<button class="btn" onclick="window.location.href='tel:9876543210'">📞 कॉल करा</button>
+</div>
+
+<div class="footer">© 2026 Mahanor Technology Innovations - Arvi</div>
+</div>
+
 <script>
-function showDash(){document.getElementById('login').style.display='none';document.getElementById('dash').style.display='block';window.scrollTo(0,0);}
-function setLang(btn,lang){
-document.querySelectorAll('.lang button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
-if(lang=='मराठी'){document.getElementById('subtitle').innerText='मध्ये लॉगिन करा';document.getElementById('l1').innerText='ईमेल';document.getElementById('l2').innerText='पासवर्ड';document.getElementById('loginBtn').innerText='लॉगिन करा →';document.getElementById('noacc').innerText='खाते नाही?';document.getElementById('reg').innerText='नोंदणी करा';document.getElementById('welcomeText').innerText='Mahanor Technology Innovations मध्ये आपले स्वागत आहे';}
-if(lang=='हिंदी'){document.getElementById('subtitle').innerText='में लॉगिन करें';document.getElementById('l1').innerText='ईमेल';document.getElementById('l2').innerText='पासवर्ड';document.getElementById('loginBtn').innerText='लॉगिन करें →';document.getElementById('noacc').innerText='खाता नहीं है?';document.getElementById('reg').innerText='रजिस्टर करें';document.getElementById('welcomeText').innerText='Mahanor Technology Innovations में आपका स्वागत है';}
-if(lang=='English'){document.getElementById('subtitle').innerText='Login to continue';document.getElementById('l1').innerText='Email';document.getElementById('l2').innerText='Password';document.getElementById('loginBtn').innerText='Login →';document.getElementById('noacc').innerText="Don't have account?";document.getElementById('reg').innerText='Register';document.getElementById('welcomeText').innerText='Welcome to Mahanor Technology Innovations';}
+function showDash(){
+document.getElementById('login').style.display='none';
+document.getElementById('dash').style.display='block';
+window.scrollTo(0,0);
 }
-</script>
-</body>
-</html>
+function openPage(id){
+document.getElementById('dash').style.display='none';
+document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+document.getElementById(id).style.display='block';
+window.scrollTo(0,0);
+}
+function goHome(){
+document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+document.getElementById('dash').style.display='block';
+window.scrollTo(0,0);
+}
+function setLang(btn,lang){
+document.querySelectorAll('.lang button').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+if(lang=='mr'){
+document.getElementById('subtitle').innerText='मध्ये लॉगिन करा';
+document.getElementById('l1').innerText='मोबाईल नंबर';
+document.getElementById('loginBtn').innerText='लॉगिन करा →';
+document.getElementById('welcomeTitle').innerText='नमस्कार! 👋';
+document.getElementById('welcomeText').innerText='Mahanor Technology Innovations मध्ये आपले स्वागत आहे';
+}
+if(lang=='hi'){
+document.getElementById('subtitle').innerText='में लॉगिन करें';
+document.getElementById('l1
