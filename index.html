@@ -1,35 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="mr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAHANOR - Technology Innovations</title>
+<title>Mahanor Technology Innovations</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-header{background:#0a1f2e;color:#fff;padding:14px 5%;display:flex;justify-content:space-between}
-.logo{font-weight:900;font-size:22px}.logo span{color:#f5c542;font-size:28px}
-.btn{background:#f5c542;color:#000;padding:10px 18px;border:none;border-radius:4px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
-.hero{background:#0a1f2e;color:#fff;padding:60px 8%}
-.hero h1{font-size:42px}.hero h1 span{color:#f5c542}
-.section{padding:40px 8%}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.card{border:1px solid #eee;padding:16px;border-radius:8px}
-input,textarea{width:100%;padding:10px;margin:6px 0;border:1px solid #ccc;border-radius:6px}
-#formBox{display:none;background:#fff;padding:20px;border-radius:10px;margin-top:12px;max-width:500px;border:1px solid #ddd}
-footer{background:#0a1f2e;color:#fff;padding:30px 8%}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f1f5f9;min-height:100vh;display:flex;justify-content:center}
+.box{width:100%;max-width:420px;background:white;min-height:100vh;padding:20px}
+.top{display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:900;font-size:18px;line-height:1.2}
+.logo span{color:#2563eb}
+.lang{display:flex;gap:4px}
+.lang button{padding:5px 8px;border:1px solid #ddd;border-radius:20px;background:white;cursor:pointer;font-size:11px}
+.lang button.active{background:#111;color:white}
+.center{text-align:center;margin-top:40px}
+.icon{width:70px;height:70px;background:#2563eb;color:white;font-size:30px;font-weight:900;display:flex;align-items:center;justify-content:center;border-radius:20px;margin:0 auto 15px}
+h1{font-size:25px;margin-bottom:5px}
+p{color:#666;font-size:14px;margin-bottom:30px}
+label{font-size:13px;font-weight:bold;display:block;margin:15px 0 5px;text-align:left}
+input{width:100%;padding:14px;border:1px solid #ddd;border-radius:12px;font-size:15px;outline:none}
+input:focus{border-color:#2563eb}
+.btn{width:100%;padding:15px;background:#2563eb;color:white;border:none;border-radius:12px;font-size:16px;font-weight:bold;margin-top:25px;cursor:pointer}
+.link{text-align:center;margin-top:20px;font-size:14px}
+.link a{color:#2563eb;text-decoration:none;font-weight:bold}
+.footer{text-align:center;margin-top:30px;font-size:12px;color:#999}
 </style>
 </head>
 <body>
-<header><div class="logo"><span>M</span> MAHANOR<br><small>TECHNOLOGY INNOVATIONS</small></div><a class="btn" href="#shop">Shop</a></header>
-<div class="hero"><h1>MAHANOR<br><span>TECHNOLOGY INNOVATIONS</span></h1><br><a class="btn" href="#services">Our Services</a></div>
-<div class="section" id="services"><h2>What We Do</h2><br><div class="grid"><div class="card"><b>Website Development</b></div><div class="card"><b>App Development</b></div><div class="card"><b>E-Commerce</b></div><div class="card"><b>Digital Marketing</b></div><div class="card"><b>IT Support</b></div><div class="card"><b>Branding</b></div></div></div>
-<div class="section" id="shop" style="background:#f8f9fa"><h2>Shop</h2><br><button class="btn" onclick="document.getElementById('formBox').style.display='block'">+ Add New Product</button><div id="formBox"><h3>Add Product</h3><input id="pName" placeholder="Product Name"><input id="pPrice" placeholder="Price"><input id="pImg" placeholder="Photo Link"><textarea id="pDesc" placeholder="Mahiti"></textarea><button class="btn" onclick="addProduct()">Save Product</button></div><div id="shopGrid" style="margin-top:20px"></div></div>
-<footer><b>MAHANOR TECHNOLOGY INNOVATIONS</b><br><p>Sangamner, Maharashtra, India</p></footer>
-<script>
-let products=JSON.parse(localStorage.getItem('mahanor_products')||'[]');
-function render(){let g=document.getElementById('shopGrid');if(products.length==0){g.innerHTML='<div style="text-align:center;padding:30px;color:#888;border:1px dashed #ccc;background:#fff">Shop madhe ajun product nahi. Var + Add New Product dabun tu swatah add kar.</div>'}else{g.innerHTML=products.map((p,i)=>'<div style="border:1px solid #ddd;padding:16px;background:#fff;text-align:center;margin-bottom:10px">'+(p.img?'<img src="'+p.img+'" style="width:100%;height:180px;object-fit:cover">':'')+'<br><b>'+p.name+'</b><p>'+(p.desc||'')+'</p><h3>Rs '+p.price+'</h3><button onclick="delProduct('+i+')" style="color:red;border:none;background:none">Delete</button></div>').join('')}}
-function addProduct(){let n=document.getElementById('pName').value,pr=document.getElementById('pPrice').value,im=document.getElementById('pImg').value,d=document.getElementById('pDesc').value;if(!n||!pr){alert('Nav ani Price tak');return}products.push({name:n,price:pr,img:im,desc:d});localStorage.setItem('mahanor_products',JSON.stringify(products));document.getElementById('formBox').style.display='none';render()}
-function delProduct(i){if(confirm('Delete karu?')){products.splice(i,1);localStorage.setItem('mahanor_products',JSON.stringify(products));render()}}
-render();
-</script>
+<div class="box">
+<div class="top">
+<div class="logo">MAHANOR<br><span>Technology Innovations</span></div>
+<div class="lang">
+<button class="active">मराठी</button>
+<button>हिंदी</button>
+<button>English</button>
+</div>
+</div>
+
+<div class="center">
+<div class="icon">M</div>
+<h1>पुन्हा स्वागत आहे</h1>
+<p>Mahanor Technology Innovations मध्ये लॉगिन करा</p>
+</div>
+
+<label>ईमेल</label>
+<input type="email" placeholder="तुमचा ईमेल टाका">
+
+<label>पासवर्ड</label>
+<input type="password" placeholder="••••••••">
+
+<button class="btn" onclick="alert('Login Success! Step 2 madhe Dashboard banvu!')">लॉगिन करा →</button>
+
+<div class="link">खाते नाही? <a href="#">नोंदणी करा</a></div>
+<div class="footer">© 2026 Mahanor Technology Innovations - Nashik</div>
+</div>
 </body>
 </html>
