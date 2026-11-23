@@ -22,3 +22,14 @@ footer{background:#0a1f2e;color:#fff;padding:30px 8%}
 <header><div class="logo"><span>M</span> MAHANOR<br><small>TECHNOLOGY INNOVATIONS</small></div><a class="btn" href="#shop">Shop</a></header>
 <div class="hero"><h1>MAHANOR<br><span>TECHNOLOGY INNOVATIONS</span></h1><br><a class="btn" href="#services">Our Services</a></div>
 <div class="section" id="services"><h2>What We Do</h2><br><div class="grid"><div class="card"><b>Website Development</b></div><div class="card"><b>App Development</b></div><div class="card"><b>E-Commerce</b></div><div class="card"><b>Digital Marketing</b></div><div class="card"><b>IT Support</b></div><div class="card"><b>Branding</b></div></div></div>
+<div class="section" id="shop" style="background:#f8f9fa"><h2>Shop</h2><br><button class="btn" onclick="document.getElementById('formBox').style.display='block'">+ Add New Product</button><div id="formBox"><h3>Add Product</h3><input id="pName" placeholder="Product Name"><input id="pPrice" placeholder="Price"><input id="pImg" placeholder="Photo Link"><textarea id="pDesc" placeholder="Mahiti"></textarea><button class="btn" onclick="addProduct()">Save Product</button></div><div id="shopGrid" style="margin-top:20px"></div></div>
+<footer><b>MAHANOR TECHNOLOGY INNOVATIONS</b><br><p>Sangamner, Maharashtra, India</p></footer>
+<script>
+let products=JSON.parse(localStorage.getItem('mahanor_products')||'[]');
+function render(){let g=document.getElementById('shopGrid');if(products.length==0){g.innerHTML='<div style="text-align:center;padding:30px;color:#888;border:1px dashed #ccc;background:#fff">Shop madhe ajun product nahi. Var + Add New Product dabun tu swatah add kar.</div>'}else{g.innerHTML=products.map((p,i)=>'<div style="border:1px solid #ddd;padding:16px;background:#fff;text-align:center;margin-bottom:10px">'+(p.img?'<img src="'+p.img+'" style="width:100%;height:180px;object-fit:cover">':'')+'<br><b>'+p.name+'</b><p>'+(p.desc||'')+'</p><h3>Rs '+p.price+'</h3><button onclick="delProduct('+i+')" style="color:red;border:none;background:none">Delete</button></div>').join('')}}
+function addProduct(){let n=document.getElementById('pName').value,pr=document.getElementById('pPrice').value,im=document.getElementById('pImg').value,d=document.getElementById('pDesc').value;if(!n||!pr){alert('Nav ani Price tak');return}products.push({name:n,price:pr,img:im,desc:d});localStorage.setItem('mahanor_products',JSON.stringify(products));document.getElementById('formBox').style.display='none';render()}
+function delProduct(i){if(confirm('Delete karu?')){products.splice(i,1);localStorage.setItem('mahanor_products',JSON.stringify(products));render()}}
+render();
+</script>
+</body>
+</html>
