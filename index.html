@@ -6,80 +6,135 @@
 <title>Mahanor Technology Innovations</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
-body{background:#050a1f;display:flex;justify-content:center}
-.box{width:100%;max-width:430px;background:#050a1f;min-height:100vh;color:#fff;overflow:hidden}
-.top{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#fff}
-.top-logo{background:#fff;padding:4px 8px;border-radius:10px}
-.top-logo img{height:42px;width:auto;display:block}
-.lang{display:flex;gap:4px}.lang button{padding:6px 8px;border:1px solid #e2e8f0;border-radius:20px;background:#f1f5f9;color:#334155;font-size:11px;font-weight:700;cursor:pointer}.lang button.active{background:#111;color:#fff}
-.hero{padding:20px 16px;background:radial-gradient(circle at 80% 20%,#1e40af 0%,#050a1f 60%);text-align:center}
-.hero-logo{background:#fff;border-radius:18px;padding:18px 10px;margin-bottom:18px}
-.hero-logo img{width:230px;max-width:90%}
-.badge{display:inline-block;background:#1e293b;border:1px solid #334155;padding:5px 12px;border-radius:20px;font-size:11px;color:#93c5fd}
-.hero h1{font-size:28px;line-height:1.2;margin:14px 0 10px}.hero h1 span{color:#38bdf8}
-.hero p{color:#94a3b8;font-size:13px;line-height:1.6}
-.hero-btns{display:flex;gap:10px;margin-top:16px}
-.btn-blue{background:#2563eb;color:#fff;border:none;padding:12px 10px;border-radius:10px;font-weight:800;font-size:13px;cursor:pointer;flex:1}
-.btn-grey{background:#1e293b;color:#fff;border:1px solid #334155;padding:12px 10px;border-radius:10px;font-weight:700;font-size:13px;cursor:pointer;flex:1}
-.stats{display:flex;gap:10px;margin-top:16px}
-.stat{flex:1;background:rgba(255,255,255,.06);border:1px solid #1e293b;padding:12px;border-radius:12px;text-align:center}
-.stat b{font-size:16px;display:block}.stat span{font-size:10px;color:#94a3b8}
-.form-card{background:#fff;color:#111;padding:22px;border-radius:22px;margin:14px 14px 0}
+body{background:#f8fafc;display:flex;justify-content:center}
+.box{width:100%;max-width:430px;background:#f8fafc;min-height:100vh;padding-bottom:25px}
+.top{background:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.top-logo img{height:42px;width:auto;display:block;background:#fff}
+.lang{display:flex;gap:4px}.lang button{padding:6px 9px;border:1px solid #e2e8f0;border-radius:20px;background:#f1f5f9;font-size:11px;font-weight:700;cursor:pointer}.lang button.active{background:#0f172a;color:#fff}
+.hero{margin:14px;border-radius:22px;overflow:hidden;background:#0f172a;color:#fff;position:relative}
+.hero img{width:100%;height:220px;object-fit:cover;opacity:.75;display:block}
+.hero-text{position:absolute;bottom:0;left:0;right:0;padding:18px;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.hero-text span{background:#2563eb;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:800}
+.hero-text h1{font-size:24px;line-height:1.25;margin:10px 0 5px}
+.hero-text p{font-size:12px;color:#cbd5e1;line-height:1.5}
+.login-card{background:#fff;margin:14px;border-radius:22px;padding:22px;box-shadow:0 8px 25px rgba(0,0,0,.06)}
 .tabs{display:flex;background:#f1f5f9;padding:5px;border-radius:12px}
 .tabs button{flex:1;padding:12px;border:none;border-radius:9px;font-weight:800;font-size:14px;cursor:pointer;background:transparent}
 .tabs button.active{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1);color:#2563eb}
-.form-card label{font-size:13px;font-weight:800;display:block;margin:14px 0 6px}
-.form-card input{width:100%;padding:14px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;outline:none;background:#f8fafc}.form-card input:focus{border-color:#2563eb;background:#fff}
+.login-card label{font-size:13px;font-weight:800;display:block;margin:14px 0 6px}
+.login-card input{width:100%;padding:14px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;outline:none;background:#f8fafc}
+.login-card input:focus{border-color:#2563eb;background:#fff}
 .btn{width:100%;padding:15px;background:linear-gradient(90deg,#2563eb,#f97316);color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:800;margin-top:22px;cursor:pointer}
 .note{text-align:center;font-size:12px;margin-top:12px;color:#94a3b8}
-.link{text-align:center;margin-top:14px;font-size:13px;color:#475569}.link a{color:#2563eb;font-weight:800;text-decoration:none}
 #dash,#p-service,#p-shop,#p-orders,#p-contact{display:none}
-.welcome{margin:18px 14px 0;background:linear-gradient(135deg,#2563eb,#0ea5e9);padding:22px;border-radius:20px}
-.welcome h2{font-size:22px}.welcome p{color:#e0f2fe;margin-top:8px;font-size:14px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px}
-.card{padding:24px 10px;border-radius:20px;text-align:center;color:#fff;font-weight:800;cursor:pointer;border:none;width:100%}
-.c1{background:linear-gradient(135deg,#2563eb,#60a5fa)}.c2{background:linear-gradient(135deg,#f97316,#fbbf24)}.c3{background:linear-gradient(135deg,#16a34a,#4ade80)}.c4{background:linear-gradient(135deg,#7c3aed,#c084fc)}
-.card b{font-size:34px;display:block}.card span{font-size:13px}
-.page{background:#fff;color:#111;padding:20px;border-radius:22px;margin:18px 14px 0}
-.page h2{font-size:20px;margin:10px 0 15px}.back{background:#f1f5f9;border:none;padding:9px 15px;border-radius:20px;font-weight:800;cursor:pointer}
-.item{display:flex;justify-content:space-between;align-items:center;background:#fff7ed;padding:14px;border-radius:14px;margin-bottom:10px;border-left:4px solid #f97316}
-.item b{font-size:14px}.item span{font-size:12px;color:#64748b}.price{color:#2563eb;font-weight:900}
-.btn-green{width:100%;padding:15px;background:#16a34a;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:800;margin-top:14px;display:block;text-align:center;text-decoration:none}
-.btn-dark{margin:14px;width:calc(100% - 28px);padding:13px;background:#fff;color:#111;border:none;border-radius:12px;font-weight:800;cursor:pointer}
-.footer{text-align:center;padding:20px;font-size:12px;color:#64748b}
+.welcome{margin:14px;background:linear-gradient(135deg,#1e40af,#2563eb);color:#fff;padding:20px;border-radius:20px}
+.welcome h2{font-size:22px}.welcome p{color:#dbeafe;margin-top:6px;font-size:13px}
+.sec-title{margin:18px 14px 10px;font-size:17px;font-weight:900;color:#0f172a;display:flex;justify-content:space-between;align-items:center}
+.pro-grid{margin:0 14px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pro-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.06);cursor:pointer;border:none;text-align:left;width:100%}
+.pro-card img{width:100%;height:110px;object-fit:cover;display:block}
+.pro-card div{padding:12px}
+.pro-card b{font-size:13px;color:#0f172a}
+.pro-card p{font-size:11px;color:#64748b;margin:4px 0}
+.pro-card span{font-size:11px;color:#2563eb;font-weight:800}
+.page{background:#fff;margin:14px;border-radius:22px;padding:18px;box-shadow:0 8px 25px rgba(0,0,0,.06)}
+.back{background:#f1f5f9;border:none;padding:9px 15px;border-radius:20px;font-weight:800;cursor:pointer;font-size:13px;margin-bottom:12px}
+.page h2{font-size:20px;margin-bottom:4px}
+.page p.sub{font-size:13px;color:#64748b;margin-bottom:14px}
+.big-img{width:100%;height:170px;object-fit:cover;border-radius:16px;margin-bottom:14px}
+.item{display:flex;gap:12px;align-items:center;background:#f8fafc;padding:12px;border-radius:14px;margin-bottom:10px}
+.item img{width:60px;height:60px;object-fit:cover;border-radius:10px}
+.item b{font-size:14px}.item span{font-size:12px;color:#64748b}
+.price{margin-left:auto;color:#2563eb;font-weight:900;white-space:nowrap}
+.btn-green{width:100%;padding:15px;background:#16a34a;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:800;margin-top:12px;display:block;text-align:center;text-decoration:none}
+.btn-dark{margin:14px;width:calc(100% - 28px);padding:13px;background:#0f172a;color:#fff;border:none;border-radius:12px;font-weight:800;cursor:pointer}
+.footer{text-align:center;padding:10px;font-size:12px;color:#94a3b8}
 </style>
 </head>
 <body>
 <div class="box">
-<div class="top"><div class="top-logo"><img src="logo.png" alt="MTI"></div><div class="lang"><button class="active" onclick="setLang(this,'mr')">मराठी</button><button onclick="setLang(this,'hi')">हिंदी</button><button onclick="setLang(this,'en')">English</button></div></div>
+<div class="top"><div class="top-logo"><img src="logo.png" alt="MTI Logo"></div><div class="lang"><button class="active">मराठी</button><button>हिंदी</button><button>English</button></div></div>
 
+<!-- LOGIN + HOME -->
 <div id="login">
 <div class="hero">
-<div class="hero-logo"><img src="logo.png" alt="Mahanor Technology Innovations"></div>
-<div class="badge">● Enterprise IT Solutions</div>
-<h1>Empowering Your<br>Business with <span>Smart<br>Technology</span> Solutions</h1>
-<p>We deliver Mobile Repair, Laptop Service, CCTV & All Technology Solutions to help your business grow faster and smarter.</p>
-<div class="hero-btns"><button class="btn-blue" onclick="document.getElementById('loginCard').scrollIntoView({behavior:'smooth'})">Get Free Consultation →</button><button class="btn-grey" onclick="showDash()">Explore Services</button></div>
-<div class="stats"><div class="stat"><b>500+</b><span>Happy Customers</span></div><div class="stat"><b>98.7%</b><span>Accuracy</span></div><div class="stat"><b>99.9%</b><span>Uptime</span></div></div>
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" alt="Technology">
+<div class="hero-text"><span>● ENTERPRISE IT SOLUTIONS</span><h1>Mahanor Technology<br>Innovations</h1><p>Mobile Repair • Laptop • CCTV • Accessories - Arvi cha No.1 Technology Store</p></div>
 </div>
-<div class="form-card" id="loginCard">
+
+<div class="login-card">
 <div class="tabs"><button id="tabMobile" class="active" onclick="switchTab('mobile')">📱 Mobile</button><button id="tabEmail" onclick="switchTab('email')">📧 Email</button></div>
 <div id="box-mobile"><label>मोबाईल नंबर</label><input id="mobileInput" type="tel" placeholder="98765 43210" maxlength="10"></div>
 <div id="box-email" style="display:none"><label>ईमेल</label><input id="emailInput" type="email" placeholder="example@gmail.com"></div>
 <label>पासवर्ड</label><input type="password" placeholder="••••••••">
 <button class="btn" onclick="doLogin()">लॉगिन करा →</button>
-<div class="link">खाते नाही? <a href="#">नोंदणी करा</a></div>
 <p class="note">OTP लागत नाही - नंबर / ईमेल टाकून डायरेक्ट लॉगिन</p>
 </div>
 </div>
 
-<div id="dash"><div class="welcome"><h2>नमस्कार! 👋</h2><p>Mahanor Technology Innovations मध्ये आपले स्वागत आहे</p></div>
-<div class="grid"><button class="card c1" onclick="openPage('p-service')"><b>🔧</b><span>Services</span></button><button class="card c2" onclick="openPage('p-shop')"><b>🛒</b><span>Shop</span></button><button class="card c3" onclick="openPage('p-orders')"><b>📦</b><span>My Orders</span></button><button class="card c4" onclick="openPage('p-contact')"><b>📞</b><span>Contact</span></button></div><button class="btn-dark" onclick="location.reload()">Logout</button></div>
+<!-- DASHBOARD - PROFESSIONAL -->
+<div id="dash">
+<div class="welcome"><h2>नमस्कार! 👋</h2><p>Mahanor Technology Innovations मध्ये आपले स्वागत आहे</p></div>
 
-<div id="p-service" class="page"><button class="back" onclick="goHome()">← Back</button><h2>🔧 आमच्या सेवा</h2><div class="item"><div><b>Mobile Repair</b><br><span>Screen, Battery, Charging</span></div><div class="price">₹499+</div></div><div class="item"><div><b>Laptop Repair</b><br><span>Software, Hardware</span></div><div class="price">₹999+</div></div><div class="item"><div><b>CCTV Installation</b><br><span>Home / Shop</span></div><div class="price">₹4,999+</div></div><a class="btn-green" href="https://wa.me/919876543210?text=Hi Mahanor, Mala Service Pahije">WhatsApp वर बुक करा</a></div>
-<div id="p-shop" class="page"><button class="back" onclick="goHome()">← Back</button><h2>🛒 Shop</h2><div class="item"><div><b>Mobile Cover</b><br><span>All Models</span></div><div class="price">₹199</div></div><div class="item"><div><b>Tempered Glass</b><br><span>With Fitting</span></div><div class="price">₹149</div></div><div class="item"><div><b>Charger / Cable</b><br><span>Original</span></div><div class="price">₹499</div></div><a class="btn-green" href="https://wa.me/919876543210?text=Hi Mahanor, Mala Product Pahije">WhatsApp वर ऑर्डर करा</a></div>
-<div id="p-orders" class="page"><button class="back" onclick="goHome()">← Back</button><h2>📦 My Orders</h2><p style="text-align:center;padding:25px 0;color:#64748b">अजून कोणतीही ऑर्डर नाही.</p><button class="btn" onclick="openPage('p-shop')">Shop बघा →</button></div>
-<div id="p-contact" class="page"><button class="back" onclick="goHome()">← Back</button><h2>📞 संपर्क</h2><p style="line-height:1.8"><b>Mahanor Technology Innovations</b><br>Arvi, Maharashtra<br><br>📞 98765 43210<br>⏰ सकाळी 10 ते रात्री 9</p><a class="btn-green" href="https://wa.me/919876543210?text=Hi Mahanor">WhatsApp करा</a><button class="btn" onclick="window.location.href='tel:9876543210'">📞 कॉल करा</button></div>
+<div class="sec-title">Our Services <span style="font-size:12px;color:#2563eb" onclick="openPage('p-service')">View All →</span></div>
+<div class="pro-grid">
+<button class="pro-card" onclick="openPage('p-service')"><img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600&q=80"><div><b>Mobile Repair</b><p>Screen, Battery, Service</p><span>Book Now →</span></div></button>
+<button class="pro-card" onclick="openPage('p-service')"><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=80"><div><b>Laptop Repair</b><p>Software & Hardware</p><span>Book Now →</span></div></button>
+<button class="pro-card" onclick="openPage('p-service')"><img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80"><div><b>CCTV Installation</b><p>Home / Shop Security</p><span>Book Now →</span></div></button>
+<button class="pro-card" onclick="openPage('p-shop')"><img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600&q=80"><div><b>Accessories Shop</b><p>Cover, Charger, Earbuds</p><span>Shop Now →</span></div></button>
+</div>
+
+<div class="sec-title">Quick Access</div>
+<div class="pro-grid">
+<button class="pro-card" onclick="openPage('p-shop')"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80"><div><b>Shop</b><p>Best Products</p><span>View Shop →</span></div></button>
+<button class="pro-card" onclick="openPage('p-orders')"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80"><div><b>My Orders</b><p>Track Your Order</p><span>View Orders →</span></div></button>
+<button class="pro-card" onclick="openPage('p-contact')"><img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=600&q=80"><div><b>Contact Us</b><p>Call / WhatsApp</p><span>Contact →</span></div></button>
+<button class="pro-card" onclick="openPage('p-service')"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80"><div><b>Free Consultation</b><p>Expert Advice</p><span>Ask Now →</span></div></button>
+</div>
+<button class="btn-dark" onclick="location.reload()">Logout</button>
+</div>
+
+<!-- SERVICE PAGE -->
+<div id="p-service" class="page">
+<button class="back" onclick="goHome()">← Back</button>
+<h2>🔧 Our Services</h2><p class="sub">खालील पैकी कोणतीही सेवा बुक करा</p>
+<img class="big-img" src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800&q=80">
+<div class="item"><img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=200&q=80"><div><b>Mobile Repair</b><br><span>Screen, Battery, Charging</span></div><div class="price">₹499+</div></div>
+<div class="item"><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=200&q=80"><div><b>Laptop Repair</b><br><span>Software, Hardware</span></div><div class="price">₹999+</div></div>
+<div class="item"><img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=200&q=80"><div><b>CCTV Installation</b><br><span>Home / Shop</span></div><div class="price">₹4,999+</div></div>
+<a class="btn-green" href="https://wa.me/919876543210?text=Hi Mahanor, Mala Service Pahije">WhatsApp वर बुक करा</a>
+</div>
+
+<!-- SHOP PAGE -->
+<div id="p-shop" class="page">
+<button class="back" onclick="goHome()">← Back</button>
+<h2>🛒 Shop</h2><p class="sub">Original Products - Best Price</p>
+<img class="big-img" src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=800&q=80">
+<div class="item"><img src="https://images.unsplash.com/photo-1601593346740-925612772716?w=200&q=80"><div><b>Mobile Cover</b><br><span>All Models</span></div><div class="price">₹199</div></div>
+<div class="item"><img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=200&q=80"><div><b>Tempered Glass</b><br><span>With Fitting</span></div><div class="price">₹149</div></div>
+<div class="item"><img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=200&q=80"><div><b>Charger / Cable</b><br><span>Original Quality</span></div><div class="price">₹499</div></div>
+<div class="item"><img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=200&q=80"><div><b>Earbuds</b><br><span>Best Sound</span></div><div class="price">₹699</div></div>
+<a class="btn-green" href="https://wa.me/919876543210?text=Hi Mahanor, Mala Product Pahije">WhatsApp वर ऑर्डर करा</a>
+</div>
+
+<!-- ORDERS PAGE -->
+<div id="p-orders" class="page">
+<button class="back" onclick="goHome()">← Back</button>
+<h2>📦 My Orders</h2><p class="sub">तुमच्या ऑर्डर इथे दिसतील</p>
+<img class="big-img" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80">
+<p style="text-align:center;padding:15px 0;color:#64748b">अजून कोणतीही ऑर्डर नाही.<br>Shop मधून ऑर्डर करा!</p>
+<button class="btn" onclick="openPage('p-shop')">Shop बघा →</button>
+</div>
+
+<!-- CONTACT PAGE -->
+<div id="p-contact" class="page">
+<button class="back" onclick="goHome()">← Back</button>
+<h2>📞 Contact Us</h2><p class="sub">आमच्याशी संपर्क साधा</p>
+<img class="big-img" src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800&q=80">
+<p style="line-height:1.8"><b>Mahanor Technology Innovations</b><br>Arvi, Maharashtra<br><br>📞 98765 43210<br>⏰ सकाळी 10 ते रात्री 9<br>📍 Arvi Main Road</p>
+<a class="btn-green" href="https://wa.me/919876543210?text=Hi Mahanor">WhatsApp करा</a>
+<button class="btn" onclick="window.location.href='tel:9876543210'">📞 कॉल करा</button>
+</div>
 
 <div class="footer">© 2026 Mahanor Technology Innovations - Arvi</div>
 </div>
@@ -88,9 +143,4 @@ let currentTab='mobile';
 function switchTab(t){currentTab=t;document.getElementById('tabMobile').classList.toggle('active',t=='mobile');document.getElementById('tabEmail').classList.toggle('active',t=='email');document.getElementById('box-mobile').style.display=t=='mobile'?'block':'none';document.getElementById('box-email').style.display=t=='email'?'block':'none';}
 function doLogin(){if(currentTab=='mobile'){let m=document.getElementById('mobileInput').value.trim();if(m.length<10){alert('कृपया 10 अंकी मोबाईल नंबर टाका');return;}}else{let e=document.getElementById('emailInput').value.trim();if(!e.includes('@')){alert('कृपया बरोबर ईमेल टाका');return;}}showDash();}
 function showDash(){document.getElementById('login').style.display='none';document.getElementById('dash').style.display='block';window.scrollTo(0,0);}
-function openPage(id){document.getElementById('dash').style.display='none';document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById(id).style.display='block';window.scrollTo(0,0);}
-function goHome(){document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById('dash').style.display='block';window.scrollTo(0,0);}
-function setLang(btn,lang){document.querySelectorAll('.lang button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
-</script>
-</body>
-</html>
+function openPage(id){document.getElementById('dash').style.display='none';document.querySelectorAll('.page').forEach(p=>p
