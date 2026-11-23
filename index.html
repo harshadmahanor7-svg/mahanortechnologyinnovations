@@ -6,54 +6,67 @@
 <title>Mahanor Technology Innovations</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f1f5f9;min-height:100vh;display:flex;justify-content:center}
+body{background:#f1f5f9;display:flex;justify-content:center}
 .box{width:100%;max-width:420px;background:white;min-height:100vh;padding:20px}
 .top{display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:900;font-size:18px;line-height:1.2}
-.logo span{color:#2563eb}
-.lang{display:flex;gap:4px}
-.lang button{padding:5px 8px;border:1px solid #ddd;border-radius:20px;background:white;cursor:pointer;font-size:11px}
-.lang button.active{background:#111;color:white}
-.center{text-align:center;margin-top:40px}
-.icon{width:70px;height:70px;background:#2563eb;color:white;font-size:30px;font-weight:900;display:flex;align-items:center;justify-content:center;border-radius:20px;margin:0 auto 15px}
-h1{font-size:25px;margin-bottom:5px}
-p{color:#666;font-size:14px;margin-bottom:30px}
-label{font-size:13px;font-weight:bold;display:block;margin:15px 0 5px;text-align:left}
+.logo{font-weight:900;font-size:18px;line-height:1.2}.logo span{color:#2563eb}
+.lang{display:flex;gap:4px}.lang button{padding:5px 8px;border:1px solid #ddd;border-radius:20px;background:white;font-size:11px}.lang button.active{background:#111;color:white}
+.center{text-align:center;margin-top:40px}.icon{width:70px;height:70px;background:#2563eb;color:white;font-size:30px;font-weight:900;display:flex;align-items:center;justify-content:center;border-radius:20px;margin:0 auto 15px}
+h1{font-size:25px} p{color:#666;font-size:14px;margin:5px 0 30px}
+label{font-size:13px;font-weight:bold;display:block;margin:15px 0 5px}
 input{width:100%;padding:14px;border:1px solid #ddd;border-radius:12px;font-size:15px;outline:none}
-input:focus{border-color:#2563eb}
 .btn{width:100%;padding:15px;background:#2563eb;color:white;border:none;border-radius:12px;font-size:16px;font-weight:bold;margin-top:25px;cursor:pointer}
-.link{text-align:center;margin-top:20px;font-size:14px}
-.link a{color:#2563eb;text-decoration:none;font-weight:bold}
+.link{text-align:center;margin-top:20px;font-size:14px}.link a{color:#2563eb;text-decoration:none;font-weight:bold}
 .footer{text-align:center;margin-top:30px;font-size:12px;color:#999}
+#dash{display:none}
+.welcome{background:#2563eb;color:white;padding:20px;border-radius:15px;margin-top:20px}
+.welcome h2{font-size:20px}.welcome p{color:#dbeafe;margin:5px 0 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.card{background:#f8fafc;border:1px solid #eee;padding:18px;border-radius:15px;text-align:center}
+.card b{font-size:28px;display:block}.card span{font-size:13px;color:#666}
+.list{margin-top:20px}.item{display:flex;justify-content:space-between;background:#f8fafc;padding:14px;border-radius:12px;margin-bottom:10px}
+.item b{font-size:14px}.item span{font-size:12px;color:#666}
+.price{color:#2563eb;font-weight:bold}
 </style>
 </head>
 <body>
 <div class="box">
 <div class="top">
 <div class="logo">MAHANOR<br><span>Technology Innovations</span></div>
-<div class="lang">
-<button class="active">मराठी</button>
-<button>हिंदी</button>
-<button>English</button>
-</div>
+<div class="lang"><button class="active">मराठी</button><button>हिंदी</button><button>English</button></div>
 </div>
 
-<div class="center">
-<div class="icon">M</div>
-<h1>पुन्हा स्वागत आहे</h1>
-<p>Mahanor Technology Innovations मध्ये लॉगिन करा</p>
-</div>
-
-<label>ईमेल</label>
-<input type="email" placeholder="तुमचा ईमेल टाका">
-
-<label>पासवर्ड</label>
-<input type="password" placeholder="••••••••">
-
-<button class="btn" onclick="alert('Login Success! Step 2 madhe Dashboard banvu!')">लॉगिन करा →</button>
-
+<!-- LOGIN -->
+<div id="login">
+<div class="center"><div class="icon">M</div><h1>पुन्हा स्वागत आहे</h1><p>Mahanor Technology Innovations मध्ये लॉगिन करा</p></div>
+<label>ईमेल</label><input type="email" placeholder="तुमचा ईमेल टाका">
+<label>पासवर्ड</label><input type="password" placeholder="••••••••">
+<button class="btn" onclick="showDash()">लॉगिन करा →</button>
 <div class="link">खाते नाही? <a href="#">नोंदणी करा</a></div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dash">
+<div class="welcome"><h2>नमस्कार, हर्षद! 👋</h2><p>Mahanor मध्ये आपले स्वागत आहे</p></div>
+<div class="grid">
+<div class="card"><b>🔧</b><span>Services</span></div>
+<div class="card"><b>🛒</b><span>Shop</span></div>
+<div class="card"><b>📦</b><span>My Orders</span></div>
+<div class="card"><b>📞</b><span>Contact</span></div>
+</div>
+<div class="list">
+<h3 style="margin-bottom:10px">Popular Products</h3>
+<div class="item"><div><b>Mobile Repair</b><br><span>Screen / Battery</span></div><div class="price">₹499</div></div>
+<div class="item"><div><b>Laptop Service</b><br><span>Full Checkup</span></div><div class="price">₹999</div></div>
+<div class="item"><div><b>CCTV Setup</b><br><span>Home / Shop</span></div><div class="price">₹4,999</div></div>
+</div>
+<button class="btn" style="background:#111" onclick="location.reload()">Logout</button>
+</div>
+
 <div class="footer">© 2026 Mahanor Technology Innovations - Nashik</div>
 </div>
+<script>
+function showDash(){document.getElementById('login').style.display='none';document.getElementById('dash').style.display='block';window.scrollTo(0,0);}
+</script>
 </body>
 </html>
