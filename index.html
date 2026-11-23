@@ -7,8 +7,8 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:linear-gradient(180deg,#1e40af 0%,#2563eb 30%,#f97316 100%);display:flex;justify-content:center;min-height:100vh}
-.box{width:100%;max-width:420px;background:#f8fafc;min-height:100vh;padding:0 20px 20px}
-.top{background:white;margin:0 -20px;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.08);position:sticky;top:0;z-index:10}
+.box{width:100%;max-width:420px;background:#f8fafc;min-height:100vh;padding:0 14px 20px;overflow:hidden}
+.top{background:white;margin:0 -14px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.08);position:sticky;top:0;z-index:10}
 .logo{font-weight:900;font-size:15px;line-height:1.2}.logo span{color:#f97316;font-size:11px}
 .lang{display:flex;gap:4px}.lang button{padding:6px 9px;border:1px solid #ddd;border-radius:20px;background:#f1f5f9;font-size:11px;cursor:pointer;font-weight:bold}.lang button.active{background:#111;color:white}
 .center{text-align:center;margin-top:20px;background:white;padding:25px 15px 20px;border-radius:20px;box-shadow:0 5px 20px rgba(0,0,0,.06)}
@@ -23,15 +23,11 @@ input{width:100%;padding:14px;border:2px solid #e2e8f0;border-radius:12px;font-s
 .footer{text-align:center;margin-top:20px;font-size:12px;color:#888}
 #dash{display:none}
 .welcome{background:linear-gradient(135deg,#2563eb,#f97316);color:white;padding:22px;border-radius:20px;margin-top:20px;box-shadow:0 8px 20px rgba(37,99,235,.3)}
-.welcome h2{font-size:21px}.welcome p{color:white;margin:5px 0 0;opacity:.9}
+.welcome h2{font-size:21px}.welcome p{color:white;margin:8px 0 0;opacity:.95;font-size:14px;line-height:1.5}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
-.card{padding:18px;border-radius:18px;text-align:center;color:white;font-weight:bold}
+.card{padding:22px 18px;border-radius:18px;text-align:center;color:white;font-weight:bold}
 .c1{background:linear-gradient(135deg,#2563eb,#60a5fa)} .c2{background:linear-gradient(135deg,#f97316,#fbbf24)} .c3{background:linear-gradient(135deg,#16a34a,#4ade80)} .c4{background:linear-gradient(135deg,#7c3aed,#c084fc)}
 .card b{font-size:30px;display:block}.card span{font-size:13px}
-.list{margin-top:20px;background:white;padding:15px;border-radius:20px;box-shadow:0 5px 20px rgba(0,0,0,.06)}
-.item{display:flex;justify-content:space-between;background:#fff7ed;padding:14px;border-radius:12px;margin-bottom:10px;border-left:4px solid #f97316}
-.item b{font-size:14px}.item span{font-size:12px;color:#666}
-.price{color:#2563eb;font-weight:900;font-size:16px}
 </style>
 </head>
 <body>
@@ -56,18 +52,12 @@ input{width:100%;padding:14px;border:2px solid #e2e8f0;border-radius:12px;font-s
 </div>
 
 <div id="dash">
-<div class="welcome"><h2>नमस्कार, हर्षद! 👋</h2><p>Mahanor मध्ये आपले स्वागत आहे</p></div>
+<div class="welcome"><h2>welcome</h2><p id="welcomeText">Mahanor Technology Innovations मध्ये आपले स्वागत आहे</p></div>
 <div class="grid">
 <div class="card c1"><b>🔧</b><span>Services</span></div>
 <div class="card c2"><b>🛒</b><span>Shop</span></div>
 <div class="card c3"><b>📦</b><span>My Orders</span></div>
 <div class="card c4"><b>📞</b><span>Contact</span></div>
-</div>
-<div class="list">
-<h3 style="margin-bottom:12px">🔥 Popular Products</h3>
-<div class="item"><div><b>Mobile Repair</b><br><span>Screen / Battery</span></div><div class="price">₹499</div></div>
-<div class="item"><div><b>Laptop Service</b><br><span>Full Checkup</span></div><div class="price">₹999</div></div>
-<div class="item"><div><b>CCTV Setup</b><br><span>Home / Shop</span></div><div class="price">₹4,999</div></div>
 </div>
 <button class="btn" style="background:#111" onclick="location.reload()">Logout</button>
 </div>
@@ -78,9 +68,9 @@ input{width:100%;padding:14px;border:2px solid #e2e8f0;border-radius:12px;font-s
 function showDash(){document.getElementById('login').style.display='none';document.getElementById('dash').style.display='block';window.scrollTo(0,0);}
 function setLang(btn,lang){
 document.querySelectorAll('.lang button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
-if(lang=='मराठी'){document.getElementById('subtitle').innerText='मध्ये लॉगिन करा';document.getElementById('l1').innerText='ईमेल';document.getElementById('l2').innerText='पासवर्ड';document.getElementById('loginBtn').innerText='लॉगिन करा →';document.getElementById('noacc').innerText='खाते नाही?';document.getElementById('reg').innerText='नोंदणी करा';}
-if(lang=='हिंदी'){document.getElementById('subtitle').innerText='में लॉगिन करें';document.getElementById('l1').innerText='ईमेल';document.getElementById('l2').innerText='पासवर्ड';document.getElementById('loginBtn').innerText='लॉगिन करें →';document.getElementById('noacc').innerText='खाता नहीं है?';document.getElementById('reg').innerText='रजिस्टर करें';}
-if(lang=='English'){document.getElementById('subtitle').innerText='Login to continue';document.getElementById('l1').innerText='Email';document.getElementById('l2').innerText='Password';document.getElementById('loginBtn').innerText='Login →';document.getElementById('noacc').innerText="Don't have account?";document.getElementById('reg').innerText='Register';}
+if(lang=='मराठी'){document.getElementById('subtitle').innerText='मध्ये लॉगिन करा';document.getElementById('l1').innerText='ईमेल';document.getElementById('l2').innerText='पासवर्ड';document.getElementById('loginBtn').innerText='लॉगिन करा →';document.getElementById('noacc').innerText='खाते नाही?';document.getElementById('reg').innerText='नोंदणी करा';document.getElementById('welcomeText').innerText='Mahanor Technology Innovations मध्ये आपले स्वागत आहे';}
+if(lang=='हिंदी'){document.getElementById('subtitle').innerText='में लॉगिन करें';document.getElementById('l1').innerText='ईमेल';document.getElementById('l2').innerText='पासवर्ड';document.getElementById('loginBtn').innerText='लॉगिन करें →';document.getElementById('noacc').innerText='खाता नहीं है?';document.getElementById('reg').innerText='रजिस्टर करें';document.getElementById('welcomeText').innerText='Mahanor Technology Innovations में आपका स्वागत है';}
+if(lang=='English'){document.getElementById('subtitle').innerText='Login to continue';document.getElementById('l1').innerText='Email';document.getElementById('l2').innerText='Password';document.getElementById('loginBtn').innerText='Login →';document.getElementById('noacc').innerText="Don't have account?";document.getElementById('reg').innerText='Register';document.getElementById('welcomeText').innerText='Welcome to Mahanor Technology Innovations';}
 }
 </script>
 </body>
